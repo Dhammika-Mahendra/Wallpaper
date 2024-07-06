@@ -1,0 +1,39 @@
+//test cases
+
+1.Decimal values
+2.Negative value
+
+
+,['Anuradhapura','rgb(255,255,255)']
+,['Badulla','rgb(255,255,255)']
+,['Baticalo','rgb(255,255,255)']
+,['Colombo','rgb(255,255,255)'],
+['Galle','rgb(255,255,255)']
+,['Gampaha','rgb(255,255,255)']
+,['Hambantota','rgb(255,255,255)'],
+['Jafna','rgb(255,255,255)']
+,['Kegalle','rgb(255,255,255)'],
+['Kalutara','rgb(255,255,255)'],
+['Kandy','rgb(255,255,255)'],
+['Kilinochchi','rgb(255,255,255)'],
+['Kurunegala','rgb(255,255,255)'],
+['Mannar','rgb(255,255,255)']
+,['Matale','rgb(255,255,255)']
+,['Matara','rgb(255,255,255)']
+,['Monaragala','rgb(255,255,255)']
+,['Mulative','rgb(255,255,255)'],
+['Nuwara Eliya','rgb(255,255,255)'],
+['Polonnaruwa','rgb(255,255,255)'],
+['Puttalama','rgb(255,255,255)'],
+['Ratnapura','rgb(255,255,255)'],
+['Trincomalee','rgb(255,255,255)'],
+['Wavunia','rgb(255,255,255)']
+
+//hierrarchy-------------------------------------->>>>>>>>>>>>>>>>>
+
+Map
+    Confirm
+        ColorBar
+        Scale
+        DataField
+            DataFieldUnit
