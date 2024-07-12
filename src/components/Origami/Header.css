@@ -1,0 +1,24 @@
+#navBarFall{
+    position:absolute;
+    top:0;
+    left:0;
+    height:500px;
+    width:500px;
+    background-color:#ffe70f;
+    box-shadow:0 -1px 3px 0 rgba(0,0,0,0.5);
+    transform:translateY(-150px) translateX(220px) rotate(45deg);
+}
+
+.drop{
+    filter: drop-shadow(0 -1px 2px rgba(0,0,0,0.5));
+}
+
+#navBar{
+    position:absolute;
+    top:0;
+    left:0;
+    height:100px;
+    width:600px;
+    background-color:#ffe70f;
+    clip-path: polygon(0% 0%, 18% 100%, 100% 100%, 100% 0%)
+}
