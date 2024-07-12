@@ -1,10 +1,10 @@
-import Map from './components/Map';
+import Origami from "./components/Origami/Origami";
 
 function App() {
 
   return (
     <div className="App">
-        <Map></Map>
+        <Origami></Origami>
     </div>
   );
 }

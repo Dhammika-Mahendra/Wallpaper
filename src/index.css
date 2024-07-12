@@ -1,10 +1,31 @@
+@font-face {
+  font-family: 'Orbitron';
+  src: url('../src//assets/Orbitron.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1{
+  font-family: 'Orbitron';
+  font-size: 72px;
+  letter-spacing: 10px;
+  color: white;
+  margin: 0;
+  margin-top: 20px;
+}
+
+
 body {
+  height: 100vh;
+  width: 100vw;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color:#fff570,
+  ;
 }
 
 code {
@@ -20,4 +41,40 @@ code {
 .colpoint:hover .delete{
   display: inline;
   cursor: pointer;
+}
+
+.view{
+  position: absolute;
+  animation-name: moveBackAndForth;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+}
+
+@keyframes moveBackAndForth {
+  0% {
+    left: -400px;
+  }
+  20% {
+    left: 0px;
+  }
+  80% {
+    left: 0px;
+  }
+  100% {
+    left: -400px;
+  }
+}
+
+.start{
+  transform: translateX(200px);
+  transition: transform 1s;
+}
+
+.finish{
+  transform: translateX(-200px);
+  transition: transform 1s;
+}
+
+.drop{
+  filter: drop-shadow(0 -1px 2px rgba(0,0,0,0.5));
 }
