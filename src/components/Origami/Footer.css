@@ -51,7 +51,7 @@
     background-image: url('../../assets/icons/mail.png');
 }
 
-@media(max-width:750px){
+@media(max-width:1000px){
     #footTriangle{
         height:400px;
         width:400px;
@@ -62,4 +62,14 @@
         transform:rotate(45deg);
         box-shadow:0 0 3px 0 rgba(0,0,0,0.5);
     }
+    #contact>div{
+        width: 16px;
+        height: 16px;
+    }
+    #contact{
+        height: 150px;
+        bottom: 10px;
+        left: 15px;
+    }
+
 }

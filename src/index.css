@@ -23,6 +23,11 @@
   font-family: 'OpenSans';
 }
 
+.dailyContent>p{
+  font-family: 'OpenSans';
+  font-size: 12px;
+}
+
 body {
   height: 100vh;
   width: 100vw;
@@ -34,7 +39,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  padding-top: 20px;
+  padding-top: 10px;
   padding-left: 30px;
 }
 
@@ -79,7 +84,6 @@ body {
   width: 500px;
 }
 
-
 .start{
   transform: translateX(200px);
   transition: transform 1s;
@@ -89,3 +93,26 @@ body {
   transform: translateX(-200px);
   transition: transform 1s;
 }
+
+@media(max-width:1150px){
+  .webName{
+    font-size: 36px;
+    letter-spacing: 10px;
+  }
+  .webNameSub{
+    padding-left: 5px;
+    font-size: 13px;
+    letter-spacing: 37px;
+    margin-top: -6px;
+  }
+
+  .webNameWelcome{
+    font-size: 11px;
+  }  
+  .webNameDescript{
+    font-size: 11px;
+    width: 350px;
+  }
+
+}
+

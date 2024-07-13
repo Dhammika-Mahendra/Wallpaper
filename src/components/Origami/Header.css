@@ -46,9 +46,41 @@
     cursor: pointer;
 }
 
+.daily{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    top:100px;
+    left: 400px;
+    background-color: #ffe70f;
+    box-shadow: 0 0px 1px 0 rgba(0,0,0,0.5);
+    transition: all 0.2s linear;
+}
+
+.dailyShow{
+    visibility: visible;
+    transform: translateX(-220px) translateY(220px) rotate(45deg);
+    transition: transform 0.2s linear;
+}
+
+.dailyHide{
+    visibility: visible;
+    transform: rotate(-45deg) translateY(-220px) translateX(220px) ;
+    transition: transform 0.2s linear;
+}
+
+.dailyContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(-45deg);
+}
+
+
 /*------------ Tablet breakpoint ------------------------*/
 
-@media(max-width:750px){
+@media(max-width:1000px){
 
     #headerContainer{
         position:fixed;
@@ -74,5 +106,12 @@
         width:400px;
         background-color:#ffe70f;
         clip-path: polygon(0% 0%, 20% 100%, 100% 100%, 100% 0%)
+    }
+    #headerMenu{
+        width: 300px;
+        padding:0 20px;
+        top:15px;
+        left: 50px;
+        font-size: 12px;
     }
 }
