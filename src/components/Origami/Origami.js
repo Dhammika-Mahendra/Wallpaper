@@ -2,6 +2,7 @@ import React from 'react'
 import View from './comp/View';
 import Header from './Header';
 import Footer from './Footer';
+import './Origami.css';
 
 export default function Origami() {
 

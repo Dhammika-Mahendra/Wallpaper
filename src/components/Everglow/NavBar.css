@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'InriaSans';
+    src: url('../../assets/InriaSans.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+div{
+    font-family: 'InriaSans';
+    color: white;
+    font-size: 16;
+}

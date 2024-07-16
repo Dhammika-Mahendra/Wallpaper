@@ -1,0 +1,123 @@
+@font-face {
+    font-family: 'Orbitron';
+    src: url('../../assets/Orbitron.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Gemunu';
+    src: url('../../assets/Gemunu.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'OpenSans';
+    src: url('../../assets/OpenSans.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  #headerMenu{
+    font-family: 'OpenSans';
+  }
+  
+  .dailyContent>p{
+    font-family: 'OpenSans';
+    font-size: 12px;
+  }
+  
+  body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+  }
+  
+  .webNameContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding-top: 10px;
+    padding-left: 30px;
+  }
+  
+  .webName{
+    font-family: 'Orbitron';
+    font-size: 48px;
+    letter-spacing: 5px;
+    color: #CDB903;
+    margin: 0;
+    font-weight: bold;
+  }
+  
+  .webNameSub{
+    padding-left: 5px;
+    font-family: 'Gemunu';
+    font-size: 24px;
+    letter-spacing: 36px;
+    color: #CDB903;
+    font-weight: bold;
+    margin-top: -10px;
+  }
+  
+  .webNameIntro{
+    border-top: 1px solid #918901;
+    padding-top: 10px;
+    margin-top: 30px;
+  }
+  
+  .webNameWelcome{
+    font-family: 'OpenSans';
+    font-size: 13px;
+    color: #686201;
+    margin: 0;
+    font-weight: bold;
+  }
+  
+  .webNameDescript{
+    font-family: 'OpenSans';
+    font-size: 13px;
+    color: #686201;
+    margin: 0;
+    width: 520px;
+  }
+  
+  .init{
+    transform: translateY(-500px);
+  }
+  
+  .start{
+    transform: translateY(660px) translateX(200px) rotate(-30deg);
+    transition: transform 1s;
+  }
+  
+  .finish{
+    transform: translateY(1200px) translateX(600px) rotate(30deg);
+    transition: transform 1s;
+  }
+  
+  @media(max-width:1150px){
+    .webName{
+      font-size: 36px;
+      letter-spacing: 10px;
+    }
+    .webNameSub{
+      padding-left: 5px;
+      font-size: 13px;
+      letter-spacing: 37px;
+      margin-top: -6px;
+    }
+  
+    .webNameWelcome{
+      font-size: 11px;
+    }  
+    .webNameDescript{
+      font-size: 11px;
+      width: 350px;
+    }
+  
+  }
+  
+  

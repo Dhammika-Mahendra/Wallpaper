@@ -1,0 +1,25 @@
+#fbIco{
+    background-image: url('../../assets/icons/everglow/fb.png');
+}
+
+#ytIco{
+    background-image: url('../../assets/icons/everglow/yt.png');
+}
+
+#instaIco{
+    background-image: url('../../assets/icons/everglow/insta.png');
+}
+
+#mailIco{
+    background-image: url('../../assets/icons/everglow/mail.png');
+}
+
+.ico{
+    width: 32px;
+    height: 32px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    color: white;
+}

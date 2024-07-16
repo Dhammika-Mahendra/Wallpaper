@@ -3,7 +3,7 @@
     width:500px;
     background-color:#ffe70f;
     position:fixed;
-    top:50%;
+    top:55%;
     transform-origin:top left;
     transform:rotate(45deg);
     box-shadow:0 0 3px 0 rgba(0,0,0,0.5);
@@ -32,23 +32,23 @@
 }
 
 #fb{
-    background-image: url('../../assets/icons/fb.png');
+    background-image: url('../../assets/icons/origami/fb.png');
 }
 
 #yt{
-    background-image: url('../../assets/icons/yt.png');
+    background-image: url('../../assets/icons/origami/yt.png');
 }
 
 #in{
-    background-image: url('../../assets/icons/in.png');
+    background-image: url('../../assets/icons/origami/in.png');
 }
 
 #insta{
-    background-image: url('../../assets/icons/insta.png');
+    background-image: url('../../assets/icons/origami/insta.png');
 }
 
 #mail{
-    background-image: url('../../assets/icons/mail.png');
+    background-image: url('../../assets/icons/origami/mail.png');
 }
 
 @media(max-width:1000px){

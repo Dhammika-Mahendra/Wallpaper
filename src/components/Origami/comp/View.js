@@ -9,7 +9,7 @@ import Flower from './Flower.glb';
 export default function View() {
     const ref = React.useRef(null);
     const objects=[
-      [Cat,11.11,77.77],[Dog,12.5,75],[Flower,14.3,71.4]
+      [Cat,11.11,83.33],[Dog,11.11,83.33],[Flower,11.11,81.81]
     ]
 
     useEffect(()=>{
@@ -17,7 +17,7 @@ export default function View() {
       const camera = new THREE.PerspectiveCamera( 45, 1, 0.1, 1000 );
       const renderer = new THREE.WebGLRenderer();
       renderer.setClearColor(0x000000, 0)
-      renderer.setSize( 400, 400 );
+      renderer.setSize( 500, 500 );
       if (ref.current.children.length === 0) {
         ref.current.appendChild(renderer.domElement);
       }
@@ -36,6 +36,7 @@ export default function View() {
       let actions = [];
       let currentClass='start'
 
+      let posInit=true
       function loadAndPlay(){
         const loader = new GLTFLoader();
         loader.load(
@@ -60,10 +61,10 @@ export default function View() {
           }
         );
         if(ref.current.classList.contains('finish')){
+          ref.current.classList.add('init')
           ref.current.classList.remove('finish')
         }
-        ref.current.classList.add('start')
-        currentClass='start'
+        currentClass='init'
       }
 
       loadAndPlay()
@@ -81,6 +82,11 @@ export default function View() {
         }
         actions.forEach((action) => {
           const progress = (action.time / action.getClip().duration) * 100;
+          if(currentClass=='init'){
+            ref.current.classList.remove('init')
+            ref.current.classList.add('start')
+            currentClass='start'
+          }
           if(progress>=objects[currentInd][2] && currentClass==='start'){
             currentClass='finish'
             ref.current.classList.remove('start')
@@ -88,7 +94,6 @@ export default function View() {
           }
           if (progress >= 99 && progress < 100) {
             actions=[]
-            console.log(action.getClip().duration);
             if(currentInd==2){currentInd=0}else{currentInd++}
             loadAndPlay()
           }
@@ -107,7 +112,16 @@ export default function View() {
     },[])
   
     return (
-      <div style={{width:'400px',height:'400px',left:'-400px'}} ref={ref}></div>
+      <div 
+        style={{
+          width:'500px',height:'500px',
+          position:'fixed',
+          top:'-500px',
+          left:'0'
+        }} 
+        ref={ref}
+        >
+      </div>
     )
 }
- */
+  */
