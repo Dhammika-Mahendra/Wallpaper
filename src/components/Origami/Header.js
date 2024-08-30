@@ -19,9 +19,9 @@ export default function Header() {
     <div id="headerContainer">{/* --- to give whole unit a fixed behavior */}
       <div ref={dailyRef} className='daily'>
         <div className='dailyContent'>
-          <div style={{marginBottom:'25px'}}>Daily tip!</div>
-          <div style={{textAlign:'center'}}>Wanna know how to <br></br> make a</div>
-          <div style={{fontSize:'30px'}} id='dailyContentName'>flying parrot</div>
+          <div id='dailyTip'>Daily tip!</div>
+          <div style={{textAlign:'center'}} id='wannaKnow'>Wanna know how to <br></br> make a</div>
+          <div id='dailyContentName'>flying parrot</div>
         </div>
       </div>
       <div style={{position:'relative'}}>{/* --- to control elements as absolute */}

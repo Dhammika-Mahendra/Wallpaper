@@ -12,9 +12,9 @@ export default function SideBar() {
             }}
     >
         <div id='fbIco' className='ico'></div>
-        <div style={{width:'29px',height:'29px'}} id='instaIco' className='ico'></div>
-        <div style={{width:'28px',height:'28px'}} id='ytIco' className='ico'></div>
-        <div style={{width:'28px',height:'28px'}} id='mailIco' className='ico'></div>
+        <div style={{width:'28px',height:'28px'}} id='instaIco' className='ico'></div>
+        <div style={{width:'25px',height:'25px'}} id='ytIco' className='ico'></div>
+        <div style={{width:'25px',height:'25px'}} id='mailIco' className='ico'></div>
     </div>
   )
 }

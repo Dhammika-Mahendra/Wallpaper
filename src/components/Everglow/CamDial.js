@@ -3,11 +3,40 @@ import focus from './camDial/focus.svg'
 import apature from './camDial/apature.svg'
 import ISO from './camDial/ISO.svg'
 import isoActive from './camDial/isoActive.svg'
-import mountainsBg from './../../assets/mountainsBg.jpg'
+import bg from './../../assets/bg.jpg'
 import { useState } from 'react';
 import { useRef } from 'react';
+import { useEffect } from 'react'
 
 export default function CamDial() {
+  const apatureArr=[1.4,2,2.8,4,5.6,8,11,16,22,32]
+  const ISOarr=[
+    {val:6400,bright:4,contr:3},
+    {val:3200,bright:3,contr:3},
+    {val:1600,bright:2,contr:2.5},
+    {val:800,bright:1.6,contr:2},
+    {val:400,bright:1.2,contr:1.5},
+    {val:200,bright:1,contr:1},
+    {val:100,bright:0.8,contr:0.9},
+    {val:50,bright:0.6,contr:0.6}]
+  const factor=20
+  const posRef=useRef(null)
+  const [focusValue, setFocusValue] = useState(0);
+  const [apatureValue, setApatureValue] = useState(1.4);
+  const [apatureRadius, setApatureRadius] = useState(0);
+  const [ISOValue, setISOValue] = useState(5);
+
+  const [imageSize, setImageSize] = useState();
+  const [imagePos, setImagePos] = useState({x:0,y:0});
+
+  const getImageSize=()=>{
+     setImageSize(document.body.clientWidth*(1+((focusValue+1)/factor)))
+     setImagePos({x:0-(document.body.clientWidth*0.12+210)*(1+((focusValue+1)/factor))+125,y:0-(document.body.clientHeight*0.25+210)*(1+((focusValue+1)/factor))+125})
+  }
+
+  const getApatureSize=()=>{
+    setApatureRadius(250/apatureValue)
+  }
 
   //Focus ------------------------------------------------->>>>>>>>>>>>>>>>>>>>
   const [angle, setAngle] = useState(0);
@@ -66,7 +95,7 @@ export default function CamDial() {
 
   //ISO ------------------------------------------------->>>>>>>>>>>>>>>>>>>>
 
-  const [angleISO, setAngleISO] = useState(50);
+  const [angleISO, setAngleISO] = useState(72);
   const knobRefISO = useRef(null);
 
   const handleMouseDownISO = (e) => {
@@ -79,7 +108,9 @@ export default function CamDial() {
       const currentAngle = Math.atan2(moveEvent.clientY - centerY, moveEvent.clientX - centerX);
       const newAngle = (currentAngle - startAngle) * (180 / Math.PI)*0.2;
       setAngleISO((prevAngle) =>{ 
-        if ((prevAngle+newAngle) < 0){ return 0;}else if((prevAngle+newAngle) > 180){ return 180;}else {return (prevAngle + newAngle)}
+        if ((prevAngle+newAngle) < 22){ return 22;}else if((prevAngle+newAngle) > 90){ return 90;}else {
+          return (prevAngle + newAngle)
+        }
       });
     };
 
@@ -92,9 +123,25 @@ export default function CamDial() {
     document.addEventListener('mouseup', handleMouseUpISO);
   };
 
+ 
+  useEffect(() => {
+    setApatureValue(apatureArr[Math.abs(Math.round(angleAp/15))]);
+    setISOValue(Math.floor((angleISO)/10)-2);
+    setFocusValue(Math.abs(Math.round(angle/3)))
+    getImageSize()
+    getApatureSize()
+  },[angle,angleAp,angleISO])
+
+  useEffect(() => {
+    window.addEventListener('resize', getImageSize);
+    getImageSize();
+    return () => {
+      window.removeEventListener('resize', getImageSize);
+    };
+  }, []);
 
   return (
-    <div style={{position:'fixed',top:'20%',left:'20%'}}>
+    <div ref={posRef} style={{position:'fixed',top:'25%',left:'12%'}}>
        <div style={{height:'420px',width:'420px',position:'relative'}}>
        <div 
           style={{
@@ -159,6 +206,31 @@ export default function CamDial() {
             }}
             ref={knobRefAp}
             onMouseDown={handleMouseDownAp}
+        >
+        </div>
+        <div 
+            style={{
+                position:'absolute',top:'85px',left:'85px',
+                height:'250px',width:'250px',
+                clipPath:'circle(50%)',
+                backgroundColor:'white',
+                backgroundImage:`url(${bg})`,
+                backgroundRepeat:'no-repeat',
+                backgroundSize:`${imageSize}px`,
+                backgroundPosition:`${imagePos.x}px ${imagePos.y}px`,
+                filter:`brightness(${ISOarr[ISOValue].bright}) contrast(${ISOarr[ISOValue].contr})`
+            }}
+        >
+        </div>
+        {/*--- focus ring--- */}
+        <div 
+            style={{
+                position:'absolute',top:`${85+(250-apatureRadius)/2}px`,left:`${85+(250-apatureRadius)/2}px`,
+                height:`${apatureRadius}px`,width:`${apatureRadius}px`,
+                borderRadius:'50%',
+                border:'1px solid white',
+                clipPath:'circle(50%)',
+            }}
         >
         </div>
 

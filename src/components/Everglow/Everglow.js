@@ -10,6 +10,18 @@ export default function Everglow() {
         <NavBar></NavBar>
         <CamDial></CamDial>
         <SideBar></SideBar>
+        <div id='siteInfo'>
+          <div id='topic'>
+            <div id='everglow'>EVERGLOW</div>
+            <div id='com'>.com</div>
+          </div>
+          <div id='para'>
+          Dive into a world where your passion for capturing moments meets endless opportunities.
+          <br></br>
+          <br></br>
+          Whether you're here to hone your skills , showcase your talent  or shop for the latest photography gear, we have something for everyone
+          </div>
+        </div>
     </div>
   )
 }

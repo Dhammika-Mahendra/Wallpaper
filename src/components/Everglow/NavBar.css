@@ -10,3 +10,11 @@ div{
     color: white;
     font-size: 16;
 }
+
+.menuItem{
+    cursor: pointer;
+}
+
+.menuItem:hover{
+    border-bottom: 2px solid white;
+}

@@ -19,7 +19,11 @@
     height: 32px;
     background-size: contain;
     background-repeat: no-repeat;
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 5px;
     color: white;
+}
+
+.ico:hover{
+    cursor: pointer;
 }

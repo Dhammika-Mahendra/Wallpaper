@@ -1,8 +1,58 @@
+@font-face {
+    font-family: 'KoHoRegular';
+    src: url('../../assets/KoHoRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OpenSans';
+    src: url('../../assets/OpenSans.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 #main{
     height: 100vh;
     width: 100vw;
-    background-image: url('../../assets/mountainsBg.jpg');
+    background-image: url('../../assets/bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0% 0%;
 }
+
+#siteInfo{
+    position: absolute;
+    top:25%;
+    right: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 410px;
+}
+
+#topic{
+    display: flex;
+    align-items: baseline;
+}
+
+#everglow{
+    font-family: 'KoHoRegular';
+    font-size: 48px;
+    color: white;
+}
+
+#com{
+    font-family: 'KoHoRegular';
+    color: white;
+    font-size: 32px;
+}
+
+#para{
+    font-family: 'OpenSans';
+    font-size: 12px;
+    color: white;
+    margin-top: 35px;
+}
+

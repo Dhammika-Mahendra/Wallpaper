@@ -10,16 +10,17 @@ export default function NavBar() {
             display:'flex',justifyContent:'space-around',alignItems:'center'
         }}
     >
-        <div>Explore</div>
-        <div>Features</div>
-        <div>Products</div>
-        <div>About</div>
+        <div className='menuItem'>Explore</div>
+        <div className='menuItem'>Features</div>
+        <div className='menuItem'>Products</div>
+        <div className='menuItem'>About</div>
         <div 
             style={{
                 backgroundColor:'white',
                 color:'rgba(0,0,0,0.5)',
                 paddingLeft:'10px',paddingRight:'10px',
-                borderRadius:'10px'
+                borderRadius:'10px',
+                cursor:'pointer'
                 }}
         >Login</div>
     </div>
